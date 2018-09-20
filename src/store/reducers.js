@@ -5,11 +5,12 @@ const initUsers = [
   { name: 'Bo', email: 'bo@email.com'}
 ]
 
-
 const users = (state = initUsers, { type, payload }) => {
   switch (type) {
     case 'getUsers':
       return state
+    case 'addUser':
+      return state.concat([payload.user])
     default:
       return state
   }

@@ -12,7 +12,17 @@ class User extends React.Component {
   }
   render() {
     const { users } = this.props
-    return (users.map(u => {return (<div style={usersStyle}><p>name: {u.name}</p><p>EMail: {u.email}</p><hr/></div>)}))
+    return (
+      users.map(u => {
+        return (
+          <div style={usersStyle} key={u.name}>
+            <p>name: {u.name}</p>
+            <p>EMail: {u.email}</p>
+            <hr/>
+          </div>
+        )
+      })
+    )
   }
 }
 
